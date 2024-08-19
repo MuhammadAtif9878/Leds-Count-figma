@@ -1,0 +1,30 @@
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+
+@layer utilities {
+    .scrollbar-blue::-webkit-scrollbar {
+        width: 11px;
+
+    }
+
+    .scrollbar-blue::-webkit-scrollbar-thumb {
+        background-color: #BFDBFE;
+        /* Blue color */
+        border-radius: 10px;
+
+
+
+    }
+
+    .scrollbar-blue::-webkit-scrollbar-track {
+        background: #ffffff;
+        padding: 5px auto;
+        /* Light grey background for the track */
+    }
+}
+
+
+.font-roboto{
+    font-family: 'Roboto', sans-serif;
+}

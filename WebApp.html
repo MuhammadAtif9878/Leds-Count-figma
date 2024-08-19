@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="font-sans">Navbar with Sidebar</title>
+    <link rel="stylesheet" href="Assets/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="Assets/tailwind.css/tailwind.config.js"></script>
+
+
+</head>
+
+<body class="bg-[#fcfcfc] scrollbar-blue  font-roboto">
+
+    <!-----------------------------------------Header---------------------------------------->
+
+    <header>
+        <!-- Navbar -->
+        <nav class="fixed top-0 left-0 right-0 bg-[#ffffff] p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-white text-lg font-semibold"> <img
+                        src="Assets/Images/Leds Count logo color white bg-ai 1.png" class="h-12 mr-3 sm:h-12 lg;h-12"
+                        alt="Logo"></a>
+
+                <!-- Links -->
+                <div class="hidden md:flex space-x-4">
+                    <!-- Sidebar Toggle Button 1 -->
+                    <a href="#" class=" hover:text-blue">
+                        <i class="fa-regular fa-bell text-1xl bg-[#f5f5f5] p-2 rounded-full mt-1 "></i>
+                    </a>
+                    <a href="#" id="toggleSidebar1" class="  text-1xl hover:text-blue">
+                        <i class="fa-solid fa-bars bg-[#f5f5f5] p-2 rounded-full mt-1"></i>
+                    </a>
+                    <a href="#" class="text-black hover:text-blue">
+                        <div class="flex">
+                            <img src="Assets/Images/image.png" class="w-10 h-10 rounded-full" alt="">
+                            <div class="ml-2">
+                                <span class="ml-2 text-1xl font-bold">Arturo Coello</span>
+                                <p>arturo.coello@gmail.com</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <!-- Sidebar Toggle Button 2 -->
+
+                    <img src="Assets/Images/akar-icons_bell.png" id="toggleSidebar2" alt="">
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!----------------------------------------Content-Area------------------------------------>
+
+    <main class="Main-Content ">
+
+        <!---------------------------------------Sidebar------------------------------------>
+
+
+        <!-- Main Content and Sidebar Wrapper -->
+        <div id="mainContentWrapper" class=" flex transition-transform duration-300">
+            <section class="Sidebar">
+                <!-- Sidebar -->
+                <div id="sidebar"
+                    class=" w-20 md:h-100  overflow-y-auto scrollbar-blue fixed inset-y-0 right-0 z-30 w-full md:w-80  bg-[#ffffff] md:bg-[#1F2937] mt-20 transform translate-x-full transition-transform duration-300">
+                    <div class=" p-10 rounded-lg shadow-lg w-full">
+                        <h2 class=" text-lg font-semibold mb-4 text-black md:text-white text-2xl "> <span
+                                class=" text-lg font-bold hidden lg:block  font-semibold mb-4 text-black md:text-white text-2xl">Court
+                                2 Settings</span> <span
+                                class="font-bold text-lg block lg:hidden  mb-4 text-black md:text-white text-2xl"> <-
+                                    Game Settings </span> </h2>
+
+                        <!-- Grid layout starts here -->
+                        <div class="grid gap-4">
+
+                            <!-- Golden Ball and TieBreak options -->
+                            <div>
+                                <p class=" mb-2 text-black block lg:hidden md:text-white font-bold">User role</p>
+                                <div class="grid grid-cols-4 block lg:hidden gap-2">
+                                    <button class="w-20 h-10  bg-blue-600 text-white rounded-full">Club</button>
+                                    <button class="w-20 h-10 bg-gray-200 text-black rounded-full">Player</button>
+
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex items-center  justify-between text-white">
+                                    <span class="text-black font-bold block lg:hidden  md:text-white">SSID</span>
+                                    <span class="text-blue-800 block lg:hidden md:text-white">RPC_Marbella</span>
+                                </div>
+                                <div class="flex items-center  justify-between text-white">
+                                    <span class="text-black md:text-white hidden lg:block">Golden Ball</span>
+                                    <label class="relative hidden lg:block inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer " onclick="handleToggle(event)">
+                                        <div
+                                            class="w-11 h-6  bg-gray-200 rounded-full peer-checked:bg-blue-600  peer-checked:after:translate-x-1 after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:left-auto peer-checked:after:right-[2px]">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between text-white">
+                                    <span class="text-black font-bold  block lg:hidden md:text-white">Password</span>
+                                    <span class="text-black block lg:hidden md:text-blue-800">•••••••••••</span>
+                                </div>
+
+                                <div class="flex items-center  justify-between text-white  mt-2">
+                                    <span class="text-black md:text-white hidden lg:block ">Golden Ball</span>
+                                    <label class="relative hidden lg:block inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer " onclick="handleToggle(event)">
+                                        <div
+                                            class="w-11 h-6  bg-gray-200 rounded-full peer-checked:bg-blue-600  peer-checked:after:translate-x-1 after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:left-auto peer-checked:after:right-[2px]">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center  justify-between text-white">
+                                    <span class="text-black font-bold block lg:hidden md:text-white">Court</span>
+                                    <span class="text-black block lg:hidden md:text-white">3</span>
+                                </div>
+
+                            </div>
+
+                            <!-- TieBreak Games -->
+                            <div>
+                                <p class=" mb-2 text-black font-bold md:text-white">TieBreak Games</p>
+                                <div class="grid grid-cols-5 gap-2">
+                                    <button class="w-10 h-10 bg-blue-600 text-white rounded-full">4</button>
+                                    <button class="w-10 h-10 bg-blue-600 text-white rounded-full">5</button>
+                                    <button class="w-10 h-10 bg-blue-500 text-white rounded-full">6</button>
+                                </div>
+                            </div>
+
+                            <!-- Sets to win match -->
+                            <div>
+                                <p class="text-black font-bold md:text-white mb-2">Sets to win match</p>
+                                <div class="grid grid-cols-5 gap-2">
+                                    <button class="w-10 h-10 bg-blue-600 text-white rounded-full">1</button>
+                                    <button class="w-10 h-10 bg-blue-500 text-white rounded-full">2</button>
+                                    <button class="w-10 h-10 bg-blue-600 text-white rounded-full">3</button>
+                                </div>
+                            </div>
+
+                            <!-- Sound Toggle -->
+                            <div class="flex items-center justify-between">
+                                <p class=" text-black font-bold md:text-white">Sound</p>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer " onclick="handleToggle(event)">
+                                    <div
+                                        class="w-11 h-6  bg-gray-200 rounded-full peer-checked:bg-blue-600  peer-checked:after:translate-x-1 after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:left-auto peer-checked:after:right-[2px]">
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="w-80 mt-4 block lg:hidden rounded ">
+                                <label for="brightness" class="block text-sm font-bold  mb-2">Brightness</label>
+                                <input type="range" id="brightness" min="0" max="10" value="5"
+                                    class="w-80 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <div id="brightness-value" class="text-center mt-2 text-gray-700">5</div>
+                            </div>
+
+
+
+                            <!-- Team Red Players -->
+                            <div>
+                                <p class="text-black font-bold md:text-white mb-2">Team Red Players</p>
+                                <div class="text-black md:text-white p-2 rounded-lg grid gap-2">
+                                    <div class="flex items-center border border-gray-500 rounded-lg p-2">
+                                        <span><i class="fa-sharp fa-regular fa-user text-[#4654a5]"></i></span>
+                                        <input type="text" placeholder="Juan Lebron"
+                                            class="ml-2 border-none bg-transparent outline-none text-black md:text-white">
+                                    </div>
+                                    <div class="flex items-center  border border-gray-500 rounded-lg p-2">
+                                        <span><i class="fa-sharp fa-regular fa-user text-[#4654a5]"></i></span>
+                                        <input type="text" placeholder="Martin Di Nenno"
+                                            class="ml-2 border-none bg-transparent outline-none text-black md:text-white">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Team Blue Players -->
+                            <div>
+                                <p class="text-black font-bold md:text-white mb-2">Team Red Players</p>
+                                <div class="text-black md:text-white p-2 rounded-lg grid gap-2">
+                                    <div class="flex items-center border border-gray-500 rounded-lg p-2">
+                                        <span><i class="fa-sharp fa-regular fa-user text-[#4654a5] "></i></span>
+                                        <input type="text" placeholder="Juan Lebron"
+                                            class="ml-2 border-none bg-transparent outline-none text-black md:text-white">
+                                    </div>
+                                    <div class="flex items-center border border-gray-500 rounded-lg p-2">
+                                        <span><i class="fa-sharp fa-regular fa-user text-[#4654a5]"></i></span>
+                                        <input type="text" placeholder="Martin Di Nenno"
+                                            class="ml-2 border-none bg-transparent outline-none text-black md:text-white">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p class="text-black font-bold text-center text-gray-400 mt-10 md:hidden"><i
+                                class="fa-solid fa-arrow-rotate-right fa-flip-both"></i> Reset settings</p>
+
+                        <!-- Save Button -->
+                        <button class="w-full mt-4 py-2 bg-blue-600 text-white rounded-lg">Save Settings</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!--------------------------------------Content-Area---------------------------------->
+
+
+
+
+
+            <!-- Main Content Area -->
+            <div id="content" class="flex-1 mt-20 ">
+                <div class="max-w-6xl mx-auto p-6 ">
+                    <h1 class="text-3xl font-bold text-gray font-roboto">Naranja</h1>
+                    <p class="text-gray-500 mb-6"><i class="fa-sharp-duotone fa-solid fa-location-dot"></i>
+
+                        Coin</p>
+
+                    <!-- Grid Container -->
+                    <h1 class="text-2xl mt-10 font-bold font-roboto">Conrt 1</h1>
+                    <div class="overflow-hidden mt-6 rounded-lg border">
+                        <table class="min-w-full bg-white font-roboto">
+                            <thead class="text-left bg-white font-semibold text-gray-700 uppercase rounded-t-lg">
+                                <tr class="font-roboto">
+                                    <th class="py-2 px-10 border-b border-gray-200 font-roboto">Team</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell ">
+                                        Player 1</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell">
+                                        Player 2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set1</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set3</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-red-200 text-red-800 text-xs w-12 border-dashed border-2 border-red-800 p-2 rounded-lg font-medium">Red</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Alejandro"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Alejandro</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-blue-200 text-blue-800 text-xs w-12 border-dashed p-2 rounded-lg font-medium">Blue</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Francisco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Francisco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Grid Container -->
+                    <h1 class="text-2xl mt-10 font-bold">Conrt 2</h1>
+                    <div class="overflow-hidden mt-6 rounded-lg border ">
+                        <table class="min-w-full bg-white  font-roboto">
+                            <thead class="text-left bg-white font-semibold text-gray-700 uppercase rounded-t-lg">
+                                <tr class="font-roboto">
+                                    <th class="py-2 px-10 border-b border-gray-200 font-roboto">Team</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell ">
+                                        Player 1</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell">
+                                        Player 2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set1</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set3</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-red-200 text-red-800 text-xs w-12 border-dashed border-2 border-red-800 p-2 rounded-lg font-medium">Red</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Alejandro"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Alejandro</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-blue-200 text-blue-800 text-xs w-12 border-dashed p-2 rounded-lg font-medium">Blue</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Francisco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Francisco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Grid Container -->
+                    <h1 class="text-2xl mt-10 font-bold">Conrt 3</h1>
+                    <div class="overflow-hidden mt-6 rounded-lg border ">
+                        <table class="min-w-full bg-white  rounded-lg font-roboto">
+                            <thead class="text-left bg-white font-semibold text-gray-700 uppercase rounded-t-lg">
+                                <tr class="font-roboto">
+                                    <th class="py-2 px-10 border-b border-gray-200 font-roboto">Team</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell ">
+                                        Player 1</th>
+                                    <th class="py-2 px-4 border-b font-roboto border-gray-200 hidden md:table-cell">
+                                        Player 2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set1</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set2</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Set3</th>
+                                    <th class="py-2 px-4 border-b border-gray-200">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-red-200 text-red-800 text-xs w-12 border-dashed border-2 border-red-800 p-2 rounded-lg font-medium">Red</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Alejandro"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Alejandro</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="py-6 px-10 text-left">
+                                        <span
+                                            class="inline-block bg-blue-200 text-blue-800 text-xs w-12 border-dashed p-2 rounded-lg font-medium">Blue</span>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Franco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Franco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4 hidden md:table-cell">
+                                        <div class="flex items-center space-x-2">
+                                            <img src="Assets/Images/image.png" alt="Francisco"
+                                                class="w-8 h-8 rounded-full">
+                                            <span>Francisco</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-2 px-4">2</td>
+                                    <td class="py-2 px-4">6</td>
+                                    <td class="py-2 px-4">5</td>
+                                    <td class="py-2 px-4 font-bold">15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+    </main>
+
+    <!--------------------------------------------Footer-------------------------------------->
+
+    <footer class="fixed bottom-0 w-full bg-white text-white py-4 block md:hidden">
+        <div class="container mx-auto flex justify-between items-center p-7">
+
+
+            <!-- Center Icon: Home -->
+            <div class="flex flex-col items-center">
+                <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3.1l-8.7 7.1V21h5v-4h7v4h5V10.2L12 3.1z"></path>
+                </svg>
+                <span class="text-gray-500">Home</span>
+            </div>
+
+            <!-- Right Icon: About -->
+            <div class="flex flex-col items-center">
+                <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17h-2v-6h2v6zm0-8h-2V7h2v4z">
+                    </path>
+                </svg>
+                <span class="text-gray-500">About</span>
+            </div>
+
+            <!-- Left Icon: Settings -->
+            <div class="flex flex-col items-center">
+                <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 15.39a3.39 3.39 0 1 1 0-6.78 3.39 3.39 0 0 1 0 6.78zm0-10.88a7.5 7.5 0 0 0-6.4 4.4L2.63 6.03A1 1 0 0 0 1.6 7.12L3.8 9.32a7.47 7.47 0 0 0 0 5.35L1.6 16.87a1 1 0 0 0 1.03 1.1l2.97-1.49a7.5 7.5 0 0 0 6.4 4.4 7.5 7.5 0 0 0 6.4-4.4l2.97 1.49a1 1 0 0 0 1.03-1.1l-2.2-2.2a7.47 7.47 0 0 0 0-5.35l2.2-2.2a1 1 0 0 0-1.03-1.1L18.8 6.03A7.5 7.5 0 0 0 12 4.51zM12 16.7a4.7 4.7 0 1 1 0-9.4 4.7 4.7 0 0 1 0 9.4z">
+                    </path>
+                </svg>
+                <span class="text-gray-500">Settings</span>
+            </div>
+
+        </div>
+    </footer>
+
+    
+    <!-- JavaScript -->
+    <script src="Assets/js/Index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>
